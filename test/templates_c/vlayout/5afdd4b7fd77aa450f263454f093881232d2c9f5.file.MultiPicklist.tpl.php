@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.7, created on 2019-11-05 09:08:52
+<?php /* Smarty version Smarty-3.1.7, created on 2019-11-06 02:25:34
          compiled from "C:\xamppold\htdocs\vtigercrm6.5\includes\runtime/../../layouts/vlayout\modules\Vtiger\uitypes\MultiPicklist.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:222015dc1255a19c881-82083259%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5afdd4b7fd77aa450f263454f093881232d2c9f5' => 
     array (
       0 => 'C:\\xamppold\\htdocs\\vtigercrm6.5\\includes\\runtime/../../layouts/vlayout\\modules\\Vtiger\\uitypes\\MultiPicklist.tpl',
-      1 => 1572944852,
+      1 => 1573007131,
       2 => 'file',
     ),
   ),
@@ -24,10 +24,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'VIEW_NAME' => 0,
     'FIELD_INFO' => 0,
     'SPECIAL_VALIDATOR' => 0,
-    'PICKLIST_VALUES' => 0,
-    'PICKLIST_VALUE' => 0,
-    'PICKLIST_NAME' => 0,
-    'FIELD_VALUE_LIST' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -40,23 +36,5 @@ _fieldName_<?php echo $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('name');
 " multiple class="select2" name="<?php echo $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->getFieldName();?>
 []" data-fieldinfo='<?php echo $_smarty_tpl->tpl_vars['FIELD_INFO']->value;?>
 ' <?php if ($_smarty_tpl->tpl_vars['FIELD_MODEL']->value->isMandatory()==true){?> data-validation-engine="validate[required,funcCall[Vtiger_Base_Validator_Js.invokeValidation]]" <?php if (!empty($_smarty_tpl->tpl_vars['SPECIAL_VALIDATOR']->value)){?>data-validator='<?php echo Zend_Json::encode($_smarty_tpl->tpl_vars['SPECIAL_VALIDATOR']->value);?>
-'<?php }?> <?php }?> style="width: 60%"><optgroup label="<?php echo vtranslate('Types');?>
-"><?php  $_smarty_tpl->tpl_vars['PICKLIST_VALUE'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['PICKLIST_VALUE']->_loop = false;
- $_smarty_tpl->tpl_vars['PICKLIST_NAME'] = new Smarty_Variable;
- $_from = $_smarty_tpl->tpl_vars['PICKLIST_VALUES']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['PICKLIST_VALUE']->key => $_smarty_tpl->tpl_vars['PICKLIST_VALUE']->value){
-$_smarty_tpl->tpl_vars['PICKLIST_VALUE']->_loop = true;
- $_smarty_tpl->tpl_vars['PICKLIST_NAME']->value = $_smarty_tpl->tpl_vars['PICKLIST_VALUE']->key;
-?><?php if (!is_numeric($_smarty_tpl->tpl_vars['PICKLIST_VALUE']->value)){?><option value="<?php echo Vtiger_Util_Helper::toSafeHTML($_smarty_tpl->tpl_vars['PICKLIST_NAME']->value);?>
-" <?php if (in_array(Vtiger_Util_Helper::toSafeHTML($_smarty_tpl->tpl_vars['PICKLIST_NAME']->value),$_smarty_tpl->tpl_vars['FIELD_VALUE_LIST']->value)){?> selected <?php }?>><?php echo $_smarty_tpl->tpl_vars['PICKLIST_VALUE']->value;?>
-</option><?php }?><?php } ?></optgroup><optgroup label="<?php echo vtranslate('Years');?>
-"><?php  $_smarty_tpl->tpl_vars['PICKLIST_VALUE'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['PICKLIST_VALUE']->_loop = false;
- $_smarty_tpl->tpl_vars['PICKLIST_NAME'] = new Smarty_Variable;
- $_from = $_smarty_tpl->tpl_vars['PICKLIST_VALUES']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['PICKLIST_VALUE']->key => $_smarty_tpl->tpl_vars['PICKLIST_VALUE']->value){
-$_smarty_tpl->tpl_vars['PICKLIST_VALUE']->_loop = true;
- $_smarty_tpl->tpl_vars['PICKLIST_NAME']->value = $_smarty_tpl->tpl_vars['PICKLIST_VALUE']->key;
-?><?php if (is_numeric($_smarty_tpl->tpl_vars['PICKLIST_VALUE']->value)){?><option value="<?php echo Vtiger_Util_Helper::toSafeHTML($_smarty_tpl->tpl_vars['PICKLIST_NAME']->value);?>
-" <?php if (in_array(Vtiger_Util_Helper::toSafeHTML($_smarty_tpl->tpl_vars['PICKLIST_NAME']->value),$_smarty_tpl->tpl_vars['FIELD_VALUE_LIST']->value)){?> selected <?php }?>><?php echo $_smarty_tpl->tpl_vars['PICKLIST_VALUE']->value;?>
-</option><?php }?><?php } ?></optgroup></select>
+'<?php }?> <?php }?> style="width: 60%"></select>
 <?php }} ?>

@@ -17,19 +17,19 @@
 <input type="hidden" name="{$FIELD_MODEL->getFieldName()}" value="" />
 {assign var=VIEW_NAME value={getPurifiedSmartyParameters('view')}}
         <select id="{$MODULE}_{$VIEW_NAME}_fieldName_{$FIELD_MODEL->get('name')}" multiple class="select2" name="{$FIELD_MODEL->getFieldName()}[]" data-fieldinfo='{$FIELD_INFO}' {if $FIELD_MODEL->isMandatory() eq true} data-validation-engine="validate[required,funcCall[Vtiger_Base_Validator_Js.invokeValidation]]" {if !empty($SPECIAL_VALIDATOR)}data-validator='{Zend_Json::encode($SPECIAL_VALIDATOR)}'{/if} {/if} style="width: 60%">
-            <optgroup label="{vtranslate('Types')}">
-                    {foreach item=PICKLIST_VALUE key=PICKLIST_NAME  from=$PICKLIST_VALUES}
-                        {if !is_numeric($PICKLIST_VALUE)}
-                            <option value="{Vtiger_Util_Helper::toSafeHTML($PICKLIST_NAME)}" {if in_array(Vtiger_Util_Helper::toSafeHTML($PICKLIST_NAME), $FIELD_VALUE_LIST)} selected {/if}>{$PICKLIST_VALUE}</option>
-                        {/if}
-                    {/foreach}
-            </optgroup>
-            <optgroup label="{vtranslate('Years')}">
-                {foreach item=PICKLIST_VALUE key=PICKLIST_NAME  from=$PICKLIST_VALUES}
-                    {if is_numeric($PICKLIST_VALUE)}
-                        <option value="{Vtiger_Util_Helper::toSafeHTML($PICKLIST_NAME)}" {if in_array(Vtiger_Util_Helper::toSafeHTML($PICKLIST_NAME), $FIELD_VALUE_LIST)} selected {/if}>{$PICKLIST_VALUE}</option>
-                    {/if}
-                {/foreach}
-            </optgroup>
+{*            <optgroup label="{vtranslate('Types')}">*}
+{*                {foreach item=PICKLIST_VALUE key=PICKLIST_NAME  from=$PICKLIST_VALUES}*}
+{*                    {if !is_numeric($PICKLIST_VALUE)}*}
+{*                        <option value="{Vtiger_Util_Helper::toSafeHTML($PICKLIST_NAME)}" {if in_array(Vtiger_Util_Helper::toSafeHTML($PICKLIST_NAME), $FIELD_VALUE_LIST)} selected {/if}>{$PICKLIST_VALUE}</option>*}
+{*                    {/if}*}
+{*                {/foreach}*}
+{*            </optgroup>*}
+{*            <optgroup label="{vtranslate('Years')}">*}
+{*                {foreach item=PICKLIST_VALUE key=PICKLIST_NAME  from=$PICKLIST_VALUES}*}
+{*                    {if is_numeric($PICKLIST_VALUE)}*}
+{*                        <option value="{Vtiger_Util_Helper::toSafeHTML($PICKLIST_NAME)}" {if in_array(Vtiger_Util_Helper::toSafeHTML($PICKLIST_NAME), $FIELD_VALUE_LIST)} selected {/if}>{$PICKLIST_VALUE}</option>*}
+{*                    {/if}*}
+{*                {/foreach}*}
+{*            </optgroup>*}
         </select>
 {/strip}
